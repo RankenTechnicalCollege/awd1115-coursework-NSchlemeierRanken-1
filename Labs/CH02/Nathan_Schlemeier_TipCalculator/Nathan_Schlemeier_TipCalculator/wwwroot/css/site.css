@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.quotation-container {
+    margin: 50px;
+}
+
+h1 {
+    color: navy;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.btn {
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: blue;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: gray;
+    color: white;
+}
+
+.text-danger {
+    color: red;
+}

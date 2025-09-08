@@ -1,0 +1,24 @@
+﻿@model TipCalculatorModel
+@{
+    Layout = "_Layout";
+}
+
+<div class="quotation-container">
+    <h1>Tip Calculator</h1>
+    <div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+
+    <form asp-controller="Home" asp-action="Calculate" method="post">
+        <label for="mealCost">Meal Cost:</label>
+        <input type="number" id="mealCost" name="MealCost" step="0.01" value="@Model.MealCost" required class="form-control">
+        <ul>
+            <li>15% Tip: <span style="padding-left: 50px;">$@ViewBag.TipAmountFor15Percent</span></li>
+            <li>20% Tip: <span style="padding-left: 50px;">$@ViewBag.TipAmountFor20Percent</span></li>
+            <li>25% Tip: <span style="padding-left: 50px;">$@ViewBag.TipAmountFor25Percent</span></li>
+        </ul>
+
+        <input type="submit" value="Calculate" class="btn btn-primary" />
+        <a asp-action="Index">Clear</a>
+    </form>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Nathan_Schlemeier_TipCalculator.props" />
+</Project>

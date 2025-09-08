@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Nathan_Schlemeier_TipCalculator/1.0.0": {
+        "runtime": {
+          "Nathan_Schlemeier_TipCalculator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Nathan_Schlemeier_TipCalculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,51 @@
+﻿﻿@{
+    Layout = "_Layout";
+}
+
+<div class="quotation-container">
+    <h1>Price Quotation</h1>
+
+    <!--Form for calculating price-->
+    @using (Html.BeginForm("CalculatePriceQuotation", "Home", FormMethod.Post))
+    {
+        <!--Display validatation errors-->
+        <div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+
+        <!--Field to input the subtotal-->
+        <div>
+            <label>Subtotal:</label>
+            <!--Input field for subtotal-->
+            <input type="text" class="form-control" name="Subtotal" value="@Model.Subtotal" />
+        </div>
+
+        <!--Field to input discount percent-->
+        <div>
+            <label>Discount percent:</label>
+            <input type="text" class="form-control" name="DiscountPercent" value="@Model.DiscountPercent" />
+        </div>
+
+        <!--Display field for discount amount-->
+        <div>
+            <label>Discount amount:</label>
+            <!--Display the calculated discount amount-->
+            <span>@Model.DiscountAmount.ToString("C")</span>
+        </div>
+
+        <!--Display field for the total-->
+        <div>
+            <label>Total:</label>
+            <!--Display the calculated total-->
+            <span>@Model.Total.ToString("C")</span>
+        </div>
+
+        <!--Buttons for calculate and clear-->
+        <div>
+            <!--Submit button to calculate the price-->
+            <input type="submit" value="Calculate" class="btn btn-primary" />
+            <!--Button to clear form-->
+            <a asp-action="Index">Clear</a>
+        </div>
+    }
+</div>
