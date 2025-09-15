@@ -1,0 +1,22 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightsteelblue;
+    color: black;
+}
+
+.header, .footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    background-color: #4A90E2;
+    color: white;
+}
+
+.footer {
+    background-color: darkslategray;
+    color: white;
+}
