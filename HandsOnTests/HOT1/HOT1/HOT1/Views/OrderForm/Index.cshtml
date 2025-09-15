@@ -1,0 +1,45 @@
+﻿@model HOT1.Models.OrderForm
+@{
+    ViewBag.ApplicationName = "Order Form";
+    ViewBag.Title = "Order Form";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <h1 class="mt-5">Crazy Crank's T-Shirt Factory</h1>
+    <h3>Order Form</h3>
+    <form method="post" class="mt-4">
+        <div class="form-group row">
+            <label asp-for="Quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10">
+                <input asp-for="Quantity" class="form-control" type="number" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DiscountCode" class="col-sm-2 col-form-label">Discount Code</label>
+            <div class="col-sm-10">
+                <input asp-for="DiscountCode" class="form-control" />
+                <span asp-validation-for="DiscountCode" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model.DiscountMessage))
+                {
+                    <div class="mt-2 text-success">@Model.DiscountMessage</div>
+                }
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Order</button>
+    </form>
+
+    @if (Model != null && Model.Quantity > 0)
+    {
+        <div class="mt-3 p-3 border result-box">
+            <p class="lead">
+                @Model.Quantity T-Shirts @Model.DiscountedPricePerShirt.ToString("C") each
+            </p>
+            <p class="lead">------------------------------</p>
+            <p class="lead">Subtotal: @Model.Subtotal.ToString("C")</p>
+            <p class="lead">Tax: @Model.Tax.ToString("C")</p>
+            <p class="lead">Total: @Model.Total.ToString("C")</p>
+        </div>
+    }
+</div>

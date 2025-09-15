@@ -1,0 +1,33 @@
+﻿@model HOT1.Models.DistanceConverter
+@{
+    // Set ViewBag values
+    ViewBag.ApplicationName = "Distance Converter";
+    ViewBag.Title = "Distance Converter";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <h1 class="mt-5">Distance Converter</h1>
+    <!-- Form for entering distance in inches -->
+    <form method="post" class="mt-4">
+        <div class="form-group">
+            <!-- Floating label for input field -->
+            <label asp-for="DistanceInInches" class="form-floating">Distance in Inches</label>
+            <!-- Input field for entering distance in inches -->
+            <input asp-for="DistanceInInches" class="form-control" />
+            <!-- Validation message for input field -->
+            <span asp-validation-for="DistanceInInches" class="text-danger"></span>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-danger mt-3">Convert</button>
+    </form>
+
+    <!-- Display conversion result if available -->
+    @if (Model != null && Model.DistanceInCentimeters != 0)
+    {
+        <div class="mt-3">
+            <!-- Display result of conversion -->
+            <p class="lead">@Model.DistanceInInches.ToString("0.00") inches is @Model.DistanceInCentimeters.ToString("0.00") centimeters</p>
+        </div>
+    }
+</div>
